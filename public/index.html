@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>URL Shortener</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <button id="authBtn" class="auth-button">Sign In/Up</button>
+
+    <div id="userBox" style="display:none;">
+      <div class="pill-box" id="pillBox">
+        <div class="pill-username" id="displayUsername">Username</div>
+        <div class="pill-divider"></div>
+        <div class="pill-arrow" id="dropdownArrow">&#9660;</div>
+      </div>
+      <div class="dropdown-content" id="dropdownContent">
+        <a href="/history.html">History</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>URL Shortener</h1>
+      <form id="shortenForm">
+        <textarea id="longUrl" placeholder="Enter a long URL..." required></textarea>
+        <button type="submit">Shorten</button>
+      </form>
+      <div class="result" id="shortenedUrl"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="authModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle">Sign In</h2>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" style="display:none;" />
+      <div id="authMessage" style="margin-bottom: 10px;"></div>
+      <button onclick="submitAuth()">Submit</button>
+      <div class="toggle-auth" onclick="toggleMode()">Switch to Sign Up</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
